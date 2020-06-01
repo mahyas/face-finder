@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from './components/Navigation/Navigation.js';
 import './App.css';
 
+
 class App extends component {
   render() {
     return (
