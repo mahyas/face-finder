@@ -39,7 +39,7 @@ class App extends Component {
   onButtonSumbit = () => {
     this.setState({imageUrl:this.state.input});
     app.models.predict(
-      Clarifai.COLOR_MODEL,
+      Clarifai.FACE_DETECT_MODEL,
       this.state.input)
       .then(
       function(response) {
