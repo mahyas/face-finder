@@ -5,6 +5,7 @@ import Signin from './components/Signin/Signin.js';
 import FaceFinder from './components/FaceFinder/FaceFinder.js';
 import Navigation from './components/Navigation/Navigation.js';
 import Logo from './components/Logo/Logo.js';
+import Register from './components/Register/Register.js';
 import ImageLinkInput from './components/ImageLinkInput/ImageLinkInput.js';
 import Rank from './components/Rank/Rank.js';
 import './App.css';
@@ -76,15 +77,18 @@ class App extends Component {
         params={particlesOptions}
         />
         <Navigation onRouteChange={this.onRouteChange}/>
-        {this.state.route === 'signin' ?
-        <Signin onRouteChange={this.onRouteChange}/> :
-        <div> 
+        {this.state.route === 'home' 
+        ? <div> 
           <Logo />
           <Rank />
           <ImageLinkInput onInputChange={this.onInputChange} 
                           onButtonSubmit={this.onButtonSumbit}/>
           <FaceFinder box={this.state.box} imageUrl={this.state.imageUrl}/> 
-        </div>}
+        </div> : (this.state.route ==='signin'
+        ? <Signin onRouteChange={this.onRouteChange}/> 
+        : <Register onRouteChange={this.Register}/> )
+        }
+        
       </div>
     );
   }
