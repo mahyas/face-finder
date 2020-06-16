@@ -10,6 +10,8 @@ class Register extends React.Component {
     }
   }
 
+  
+
   onNameChange = (event) => {
     this.setState({name: event.target.value})
   }
@@ -23,7 +25,7 @@ class Register extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/register', {
+    fetch('https://murmuring-bastion-47857.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
